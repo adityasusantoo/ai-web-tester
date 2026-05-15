@@ -1,108 +1,71 @@
-/* REPLACE THE :root AND CUSTOM CLASSES AT THE BOTTOM OF THE CSS FILE WITH THIS */
-
 :root {
-    /* Elegant Light Blue Theme */
+    /* Premium Elegant Blue Theme - Gen Z Palette */
     --bg-primary: #EAF6FF;
-    --bg-card: rgba(255, 255, 255, 0.65); /* Glassmorphism base */
-    --bg-input: rgba(255, 255, 255, 0.8);
+    --bg-card: rgba(255, 255, 255, 0.75);
     --border: #B7DFFF;
-    --border-accent: #60A5FA;
     --accent: #3B82F6;
-    --accent-hover: #2563EB;
-    --accent-dim: #93C5FD;
-    --text-primary: #0F172A;
-    --text-secondary: #475569;
-    --text-muted: #64748B;
+    --accent-hover: #1D4ED8;
+    --text-main: #0F172A;
+    --text-muted: #475569;
+    --shadow-color: rgba(59, 130, 246, 0.15);
 }
 
 * {
     box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body,
-html {
+body {
     background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
 }
 
-/* Updated Input Range for Gen Z aesthetic */
-input[type=range] {
-    accent-color: var(--accent);
-}
-input[type=range]::-webkit-slider-thumb {
-    appearance: none;
-    width: 16px;
-    height: 16px;
-    background: var(--accent);
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-    transition: transform 0.2s ease-in-out;
-}
-input[type=range]::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
-}
-
-/* Light theme select options */
-select option {
-    background-color: #ffffff;
-    color: #0F172A;
-}
-
-/* Updated Scrollbar */
-.scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-.scrollbar-thin::-webkit-scrollbar-track {
-    background: transparent;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-    background: var(--accent-dim);
-    border-radius: 4px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
-}
-
-/* Updated Cards - Glassmorphism System */
 .card {
     background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 1.25rem; /* rounded-2xl */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Updated Progress Bar */
-.progress-bar-track {
-    background: rgba(183, 223, 255, 0.5);
-    border-radius: 9999px;
-    height: 8px;
-    overflow: hidden;
-    position: relative;
+.card:hover {
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+input[type=range] {
+    height: 6px;
+    background: #D1E9FF;
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
 .progress-bar-fill {
-    background: linear-gradient(90deg, #60A5FA, #3B82F6);
-    height: 100%;
-    border-radius: 9999px;
-    width: 100%;
+    background: linear-gradient(90deg, #93C5FD, #3B82F6);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
 }
 
-@keyframes indeterminate {
-    0% { transform: translateX(-100%) scaleX(.4) }
-    50% { transform: translateX(60%) scaleX(.6) }
-    to { transform: translateX(300%) scaleX(.4) }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
 }
-
-.progress-bar-indeterminate {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent, #60A5FA 40%, #3B82F6 60%, transparent);
-    animation: indeterminate 1.6s ease-in-out infinite;
-    border-radius: 9999px;
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: #B7DFFF;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
 }
