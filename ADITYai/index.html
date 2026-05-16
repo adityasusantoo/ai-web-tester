@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADITYA .ai | Futuristic AI Motion Control</title>
+    <title>ADITYA .ai | Kling V3 Pro Motion Control</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         
+        html { scroll-behavior: smooth; }
         :root {
             --bg-primary: #071426;
             --bg-secondary: #0B1E35;
@@ -28,12 +28,7 @@
         }
 
         .bg-mesh {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: 
                 radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
@@ -41,65 +36,49 @@
         }
 
         .glass-card {
-            background: var(--surface);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            border-radius: 24px;
+            background: var(--surface); backdrop-filter: blur(12px);
+            border: 1px solid var(--border); border-radius: 24px;
             transition: all 0.3s ease-out;
         }
 
         .glass-card:hover {
             border-color: rgba(56, 189, 248, 0.3);
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.1);
-            transform: translateY(-2px);
         }
 
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-blue), var(--neon-cyan));
-            color: white;
-            font-weight: 700;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            color: white; font-weight: 700; border-radius: 12px;
+            transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            cursor: pointer; display: inline-flex; justify-content: center; align-items: center;
         }
 
-        .btn-primary:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+        .btn-primary:hover:not(:disabled) {
+            transform: scale(1.02); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
         }
+        
+        .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
         .neon-text {
             background: linear-gradient(to right, #EAF4FF, #38BDF8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: var(--bg-primary);
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 10px;
-        }
+        /* Toggle Switch Styles */
+        .toggle-checkbox:checked { right: 0; border-color: #38BDF8; }
+        .toggle-checkbox:checked + .toggle-label { background-color: #38BDF8; }
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3); border-radius: 50%;
+            border-top: 3px solid #fff; width: 20px; height: 20px;
+            animation: spin 1s linear infinite; display: inline-block; margin-right: 8px;
         }
-
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
-        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
     <div class="bg-mesh"></div>
 
-    <!-- Floating Navbar -->
     <nav class="sticky top-6 z-50 mx-auto max-w-5xl px-4">
         <div class="flex items-center justify-between glass-card px-6 py-3 border-white/5 bg-[#0B1E35]/40 backdrop-blur-xl">
             <div class="flex items-center gap-3">
@@ -108,141 +87,258 @@
                 </div>
                 <span class="text-xl font-bold tracking-tighter text-[#EAF4FF]">ADITYA .AI</span>
             </div>
-            <div class="hidden md:flex gap-8 text-sm font-semibold text-[#93A4C3]">
-                <a href="#" class="hover:text-[#38BDF8] transition-all">Generator</a>
-                <a href="#" class="hover:text-[#38BDF8] transition-all">Studio</a>
-                <a href="#" class="hover:text-[#38BDF8] transition-all">Gallery</a>
+            <div class="flex gap-4">
+                <a href="https://www.magnific.com/" target="_blank" class="btn-primary px-5 py-2 text-sm uppercase tracking-wider text-white">AMBIL KEY MAGNIFIC</a>
+                <a href="https://www.facebook.com/Aditya.su.ll/" target="_blank" class="btn-primary px-5 py-2 text-sm uppercase tracking-wider">CS ADMIN</a>
             </div>
-            <button class="btn-primary px-5 py-2 text-sm uppercase tracking-wider">Connect</button>
         </div>
     </nav>
 
     <main class="max-w-6xl mx-auto px-4 py-12 lg:py-20">
-        <!-- Hero Section -->
         <div class="grid lg:grid-cols-2 gap-12 items-center mb-24">
             <div class="space-y-6">
                 <div class="inline-flex items-center px-3 py-1 rounded-full border border-blue-500/20 bg-blue-500/5 text-[#38BDF8] text-xs font-bold tracking-widest uppercase">
-                    ✨ Kling 3.0 Next-Gen Engine
+                     KLING V3 PRO EDITION (GRATIS TIDAK DI PERJUAL BELIKAN)
                 </div>
                 <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight">
                     Future of <span class="neon-text">Motion</span> Control.
                 </h1>
                 <p class="text-lg text-[#93A4C3] leading-relaxed max-w-md">
-                    Alat produksi video berbasis AI paling canggih untuk kreator Gen Z. Presisi tinggi, estetika premium, dan performa instan.
+                    Alat produksi video AI premium untuk content creator. Menggunakan engine Kling V3 Pro dengan kontrol durasi, audio, dan aspect ratio penuh.
                 </p>
                 <div class="flex gap-4 pt-4">
-                    <button class="btn-primary px-8 py-4 text-base">Mulai Create</button>
-                    <button class="px-8 py-4 rounded-xl border border-white/10 bg-white/5 font-bold hover:bg-white/10 transition-all">View Demo</button>
-                </div>
-            </div>
-            <div class="relative animate-float">
-                <div class="absolute -inset-1 bg-gradient-to-r from-[#3B82F6] to-[#38BDF8] rounded-3xl blur opacity-20"></div>
-                <div class="relative glass-card aspect-video overflow-hidden border-white/10">
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop" class="w-full h-full object-cover opacity-60" alt="Hero Visualization">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#071426] via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 p-4 glass-card bg-black/40 border-white/5">
-                        <div class="flex items-center gap-3">
-                            <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                            <span class="text-xs font-bold tracking-widest">SYSTEM ONLINE: KLING V3</span>
-                        </div>
-                    </div>
+                    <a href="#Mulai-Create" class="btn-primary px-8 py-4 text-base">Mulai Create</a>
                 </div>
             </div>
         </div>
 
-        <!-- Dashboard Layout -->
-        <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Sidebar Navigation -->
+        <div id="Mulai-Create" class="flex flex-col lg:flex-row gap-8 pt-12">
             <div class="lg:w-64 space-y-2">
                 <div class="glass-card p-3 border-white/5">
                     <div class="text-[10px] font-bold text-[#93A4C3] uppercase tracking-[0.2em] px-3 mb-3">Main Console</div>
                     <a href="#" class="flex items-center gap-3 p-3 rounded-xl bg-blue-500/10 text-[#38BDF8] border border-blue-500/20">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M11 4H4v14a2 2 0 002 2h12a2 2 0 002-2v-5M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                        <span class="font-semibold text-sm">Motion Control</span>
-                    </a>
-                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-[#93A4C3] hover:bg-white/5 transition-all">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h14a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                        <span class="font-semibold text-sm">Image Lab</span>
-                    </a>
-                    <a href="#" class="flex items-center gap-3 p-3 rounded-xl text-[#93A4C3] hover:bg-white/5 transition-all">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m12 4a2 2 0 100-4m0 4a2 2 0 110-4m-6 0v2m0-6V4m6 6v10m-6-2v2m-6-2v2"/></svg>
-                        <span class="font-semibold text-sm">Settings</span>
+                        <span class="font-semibold text-sm">V3 Pro Generator</span>
                     </a>
                 </div>
             </div>
 
-            <!-- Generator Panels -->
             <div class="flex-1 space-y-8">
-                <!-- API KEY SECTION -->
+                <!-- API Key Section -->
                 <div class="glass-card p-6">
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-sm font-bold uppercase tracking-widest text-[#93A4C3]">Auth Terminal</h3>
-                        <span class="text-[10px] text-green-400 font-mono">ENCRYPTED</span>
                     </div>
-                    <input type="password" placeholder="ENTER MAGNIFIC API KEY..." class="w-full bg-[#071426] border border-white/5 rounded-xl px-4 py-4 text-sm font-mono text-[#38BDF8] focus:border-[#3B82F6] outline-none transition-all placeholder:text-[#2a3c54]">
+                    <input type="password" id="api-key" placeholder="ENTER API KEY MAGNIFIC..." class="w-full bg-[#071426] border border-white/5 rounded-xl px-4 py-4 text-sm font-mono text-[#38BDF8] focus:border-[#3B82F6] outline-none transition-all placeholder:text-[#2a3c54]">
                 </div>
 
-                <!-- UPLOAD SECTION -->
+                <!-- Image Uploads -->
                 <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="glass-card p-6 group cursor-pointer border-dashed border-2 border-white/5 hover:border-[#38BDF8]/40 transition-all">
-                        <div class="flex flex-col items-center justify-center py-10 space-y-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-[#38BDF8] group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h14a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                    <div>
+                        <input type="file" id="start-image" class="hidden" accept="image/png, image/jpeg, image/webp">
+                        <label for="start-image" id="label-start-image" class="block glass-card p-6 group cursor-pointer border-dashed border-2 border-white/5 hover:border-[#38BDF8]/40 transition-all h-full">
+                            <div class="flex flex-col items-center justify-center py-10 space-y-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-[#38BDF8] group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm font-bold" id="start-image-name">Upload Start Image</p>
+                                    <p class="text-xs text-[#93A4C3] mt-1">(Wajib) Frame awal video</p>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <p class="text-sm font-bold">Reference Image</p>
-                                <p class="text-xs text-[#93A4C3] mt-1">PNG, JPG up to 15MB</p>
-                            </div>
-                        </div>
+                        </label>
                     </div>
-                    <div class="glass-card p-6 group cursor-pointer border-dashed border-2 border-white/5 hover:border-[#38BDF8]/40 transition-all">
-                        <div class="flex flex-col items-center justify-center py-10 space-y-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-[#38BDF8] group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+
+                    <div>
+                        <input type="file" id="end-image" class="hidden" accept="image/png, image/jpeg, image/webp">
+                        <label for="end-image" id="label-end-image" class="block glass-card p-6 group cursor-pointer border-dashed border-2 border-white/5 hover:border-[#38BDF8]/40 transition-all h-full">
+                            <div class="flex flex-col items-center justify-center py-10 space-y-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-[#38BDF8] group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm font-bold" id="end-image-name">Upload End Image</p>
+                                    <p class="text-xs text-[#93A4C3] mt-1">(Opsional) Frame akhir video</p>
+                                </div>
                             </div>
-                            <div class="text-center">
-                                <p class="text-sm font-bold">Reference Video</p>
-                                <p class="text-xs text-[#93A4C3] mt-1">MP4, MOV up to 100MB</p>
-                            </div>
-                        </div>
+                        </label>
                     </div>
                 </div>
 
-                <!-- CONFIG SECTION -->
+                <!-- Parameters Section -->
                 <div class="glass-card p-8 space-y-8">
+                    <!-- Row 1: Duration & Aspect Ratio -->
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="space-y-3">
-                            <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#93A4C3]">Engine Model</label>
-                            <select class="w-full bg-[#071426] border border-white/5 rounded-xl px-4 py-3 text-sm text-[#EAF4FF] outline-none appearance-none cursor-pointer">
-                                <option>Kling 3.0 Pro (Cinematic)</option>
-                                <option>Kling 3.0 Standard</option>
-                                <option>Kling 2.6 Pro</option>
+                            <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#93A4C3]">Duration (Seconds)</label>
+                            <select id="duration" class="w-full bg-[#071426] border border-white/5 rounded-xl px-4 py-3 text-sm text-[#EAF4FF] outline-none cursor-pointer">
+                                <option value="5">5 Seconds</option>
+                                <option value="10">10 Seconds</option>
                             </select>
                         </div>
                         <div class="space-y-3">
+                            <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#93A4C3]">Aspect Ratio</label>
+                            <select id="aspect-ratio" class="w-full bg-[#071426] border border-white/5 rounded-xl px-4 py-3 text-sm text-[#EAF4FF] outline-none cursor-pointer">
+                                <option value="16:9">16:9 (Landscape)</option>
+                                <option value="9:16">9:16 (Portrait)</option>
+                                <option value="1:1">1:1 (Square)</option>
+                                <option value="4:3">4:3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Prompts -->
+                    <div class="space-y-3">
+                        <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#93A4C3]">Positive Prompt</label>
+                        <textarea id="prompt-input" rows="2" placeholder="Describe the motion dynamics..." class="w-full bg-[#071426] border border-white/5 rounded-2xl px-4 py-4 text-sm text-[#EAF4FF] outline-none resize-none"></textarea>
+                    </div>
+
+                    <div class="space-y-3">
+                        <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#93A4C3]">Negative Prompt</label>
+                        <textarea id="negative-prompt-input" rows="2" class="w-full bg-[#071426] border border-white/5 rounded-2xl px-4 py-4 text-sm text-[#EAF4FF] outline-none resize-none">blur, distort, and low quality</textarea>
+                    </div>
+
+                    <!-- Row 3: CFG & Toggles -->
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="space-y-3">
                             <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#93A4C3]">CFG Scale</label>
                             <div class="flex items-center gap-4">
-                                <input type="range" class="flex-1 accent-[#38BDF8]">
-                                <span class="text-xs font-mono text-[#38BDF8]">0.85</span>
+                                <input type="range" id="cfg-slider" min="0.1" max="1.0" step="0.05" value="0.5" class="flex-1 accent-[#38BDF8]">
+                                <span id="cfg-value" class="text-xs font-mono text-[#38BDF8]">0.5</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between p-4 bg-[#071426] border border-white/5 rounded-xl">
+                            <label class="text-xs font-bold uppercase tracking-wider text-[#93A4C3]">Generate Audio</label>
+                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                <input type="checkbox" id="generate-audio" checked class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 transition-all duration-300"/>
+                                <label for="generate-audio" class="toggle-label block overflow-hidden h-5 rounded-full bg-gray-600 cursor-pointer transition-all duration-300"></label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="space-y-3">
-                        <label class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#93A4C3]">Custom Prompt</label>
-                        <textarea rows="3" placeholder="Describe the motion dynamics..." class="w-full bg-[#071426] border border-white/5 rounded-2xl px-4 py-4 text-sm text-[#EAF4FF] outline-none resize-none placeholder:text-[#2a3c54]"></textarea>
-                    </div>
-
-                    <button class="w-full btn-primary py-5 text-base tracking-[0.1em] uppercase">
-                        Initialize Generation Pipeline
+                    <button id="generate-btn" class="w-full btn-primary py-5 text-base tracking-[0.1em] uppercase">
+                        <span id="btn-text">Initialize Generation Pipeline</span>
                     </button>
                 </div>
+                
+                <!-- Result Section -->
+                <div id="result-section" class="glass-card p-8 hidden flex-col items-center justify-center text-center mt-6">
+                    <h3 class="text-lg font-bold text-[#EAF4FF] mb-2" id="result-title">Generation Status</h3>
+                    <p class="text-sm text-[#93A4C3] mb-6" id="result-subtitle">Memproses respons dari API...</p>
+                    <div class="w-full bg-[#071426] rounded-xl overflow-hidden border border-white/5 flex items-center justify-center p-6" id="video-container">
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
     <footer class="max-w-6xl mx-auto px-4 py-12 border-t border-white/5 text-center">
-        <p class="text-xs text-[#93A4C3] tracking-widest uppercase">© 2026 ADITYA  MOTION LABS • POWERED BY KLING AI</p>
+        <p class="text-xs text-[#93A4C3] tracking-widest uppercase">© 2026 ADITYA MOTION LABS | POWERED BY AI</p>
     </footer>
+
+    <script>
+        // Update CFG Scale slider
+        const cfgSlider = document.getElementById('cfg-slider');
+        const cfgValue = document.getElementById('cfg-value');
+        cfgSlider.addEventListener('input', function() { cfgValue.textContent = this.value; });
+
+        // Handle File Upload Visuals
+        function setupFileInput(inputId, nameId, labelId) {
+            const input = document.getElementById(inputId);
+            const nameDisplay = document.getElementById(nameId);
+            const label = document.getElementById(labelId);
+
+            input.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    nameDisplay.textContent = this.files[0].name;
+                    nameDisplay.classList.add('text-green-400');
+                    label.classList.replace('border-white/5', 'border-green-500/50');
+                }
+            });
+        }
+
+        setupFileInput('start-image', 'start-image-name', 'label-start-image');
+        setupFileInput('end-image', 'end-image-name', 'label-end-image');
+
+        // Generation Logic
+        const generateBtn = document.getElementById('generate-btn');
+        const btnText = document.getElementById('btn-text');
+        const resultSection = document.getElementById('result-section');
+        const resultTitle = document.getElementById('result-title');
+        const resultSubtitle = document.getElementById('result-subtitle');
+        const videoContainer = document.getElementById('video-container');
+
+        generateBtn.addEventListener('click', async function() {
+            const apiKey = document.getElementById('api-key').value;
+            const startImageFile = document.getElementById('start-image').files[0];
+            const endImageFile = document.getElementById('end-image').files[0];
+
+            if (!apiKey) {
+                alert('Silakan masukkan API Key Magnific Anda!');
+                return;
+            }
+            if (!startImageFile) {
+                alert('Start Image WAJIB diunggah!');
+                return;
+            }
+
+            generateBtn.disabled = true;
+            btnText.innerHTML = '<span class="spinner"></span> Processing Pipeline...';
+            resultSection.classList.add('hidden');
+
+            try {
+                const formData = new FormData();
+                formData.append('start_image', startImageFile);
+                if (endImageFile) formData.append('end_image', endImageFile);
+                
+                formData.append('prompt', document.getElementById('prompt-input').value);
+                formData.append('negative_prompt', document.getElementById('negative-prompt-input').value);
+                formData.append('duration', document.getElementById('duration').value);
+                formData.append('aspect_ratio', document.getElementById('aspect-ratio').value);
+                formData.append('cfg_scale', cfgSlider.value);
+                formData.append('generate_audio', document.getElementById('generate-audio').checked);
+
+                // Call local backend server
+                const response = await fetch('/api/generate-motion', {
+                    method: 'POST',
+                    headers: { 'Authorization': `Bearer ${apiKey}` },
+                    body: formData
+                });
+
+                const result = await response.json();
+                resultSection.classList.remove('hidden');
+                
+                if (!response.ok) throw new Error(result.error || result.details?.message || `HTTP Error ${response.status}`);
+                
+                resultTitle.textContent = "Pipeline Berhasil Dibuat!";
+                resultTitle.className = "text-lg font-bold text-green-400 mb-2";
+                resultSubtitle.textContent = "Task sedang diproses oleh server Magnific.";
+                videoContainer.innerHTML = `
+                    <div class="text-[#38BDF8] p-4 text-sm font-mono text-center">
+                        Task Created Successfully!<br><br>
+                        <span class="text-white bg-blue-900/50 px-4 py-2 rounded-lg inline-block my-2 border border-blue-500/30">
+                            Task ID: ${result.id || result.task_id || 'N/A'}
+                        </span><br><br>
+                        <span class="text-xs text-[#93A4C3]">(Silakan periksa dashboard Magnific Anda)</span>
+                    </div>
+                `;
+                resultSection.scrollIntoView({ behavior: 'smooth' });
+
+            } catch (error) {
+                console.error(error);
+                resultSection.classList.remove('hidden');
+                resultTitle.textContent = "Error System";
+                resultTitle.className = "text-lg font-bold text-red-500 mb-2";
+                resultSubtitle.textContent = "Gagal memproses permintaan.";
+                videoContainer.innerHTML = `<div class="text-red-400 p-4 text-sm font-mono text-center">${error.message}</div>`;
+                resultSection.scrollIntoView({ behavior: 'smooth' });
+            } finally {
+                generateBtn.disabled = false;
+                btnText.innerHTML = 'Initialize Generation Pipeline';
+            }
+        });
+    </script>
 </body>
 </html>
