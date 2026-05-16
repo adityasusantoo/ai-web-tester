@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "123ai-web-tester",
+  "compatibility_date": "2026-05-16",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "ADITYai"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
